@@ -1,0 +1,102 @@
+--CUSTOMER TABLE
+
+CREATE table customer(ID,name varchar(20),location varchar(20),mail_id varchar(20));
+insert into customer values(1,'Ramya','Pollachi','ramya@gmail.com');
+insert into customer values(2,'Priya','Coimbatore','priya@gmail.com');
+select * from customer;
+select ID from customer;
+alter table customer add(mobile varchar(10));
+insert into customer values where id=1 values(123456778);
+insert into customer values where id=2 values(9698016120);
+select * from customer;
+
+--TABLE HOTEL
+
+CREATE table hotel(ID,hotelID,name varchar(20),location varchar(20));
+insert into hotel values(1,101,'A2B','Coimbatore');
+insert into hotel values(2,102,'AVM','Pollachi');
+select * from hotel;
+select ID from hotel;
+alter table hotel add(type varchar(10));
+insert into hotel values where id=1 values('veg');
+insert into hotel values where id=2 values('veg,non-veg');
+select * from hotel;
+
+--TABLE DELIVERY
+
+create table delivery(name varchar(20),location varchar(20));
+insert into delivery values('Ramesh','coimbatore');
+insert into delivery values('Pradeep','pollachi');
+select * from delivery;
+
+--INNER JOIN
+SELECT hotel.hotelID, customer.customerID FROM hotel INNER JOIN customer ON hotel.customerID = customer.customerID;
+
+--LEFT JOIN
+SELECT hotel.hotelID, customer.customerID FROM hotel LEFT JOIN customer ON hotel.customerID = customer.customerID;
+
+--RIGHT JOIN
+SELECT hotel.hotelID, customer.customerID FROM hotel RIGHT JOIN customer ON hotel.customerID = customer.customerID;
+
+
+
+--TABLE STUDENT
+
+CREATE TABLE student(Id , Name varchar(20),gender varchar(20),dept varchar(20),age,marks);
+INSERT INTO student VALUES(1,'Sandhiya','F','CSE',19,99);
+INSERT INTO student VALUES(2,'Steve','M','CSE',17,91);
+INSERT INTO student VALUES(3,'Priya','F','ECE',20,85);
+INSERT INTO student VALUES(4,'Ramya','F','ECE',18,79);
+INSERT INTO student VALUES(5,'Karthik','M','ECE',17,100);
+INSERT INTO student VALUES(6,'Krithika','F','CCE',16,96);
+INSERT INTO student VALUES(7,'Rajan','M','CSBS',23,93);
+INSERT INTO student VALUES(8,'Nandhini','F','CSBS',21,71);
+INSERT INTO student VALUES(9,'Sarmila','F','EEE',18,35);
+INSERT INTO student VALUES(10,'Prasanth','M','EEE',19,60);
+SELECT * FROM student;
+
+--ALTER TABLE
+
+alter table student add column age integer;
+
+--UPDATE TABLE
+
+update student set age=19 where i=7;
+
+--SORT
+
+SELECT * FROM student order by age asc;
+SELECT * FROM student order by age desc;
+
+--COUNT
+
+SELECT count(dept) FROM student  where dept='CCE';
+SELECT count(dept) FROM student  where dept='CSE';
+SELECT count(dept) FROM student  where dept='ECE';
+SELECT count(dept) FROM student  where dept='EEE';
+SELECT * FROM student where id in(2,4);
+
+--SUM AND AVERAGE
+
+SELECT sum(marks) FROM student;
+SELECT avg(marks) FROM student;
+
+--DELETE TABLE
+
+DROP table student;
+
+
+
+
+CREATE table customer(ID integer,name varchar(20),location varchar(20),mail_id varchar(20));
+insert into customer values(1,'Ramya','Pollachi','ramya@gmail.com');
+insert into customer values(2,'Priya','Coimbatore','priya@gmail.com');
+select * from customer;
+
+CREATE table hotel(ID integer,hotelID integer,name varchar(20),location varchar(20));
+insert into hotel values(1,101,'A2B','Coimbatore');
+insert into hotel values(2,102,'AVM','');
+select * from hotel;
+
+SELECT hotel.hotelId,customer.name,hotel.location FROM hotel INNER JOIN customer ON hotel.id=customer.id;
+SELECT hotel.hotelId,customer.name,customer.mail_id,hotel.name FROM hotel left JOIN customer ON hotel.id=customer.id;
