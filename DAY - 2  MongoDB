@@ -3,7 +3,7 @@ db.collc1.insertOne({name:"Varshini",age:19});
   acknowledged: true,
   insertedId: ObjectId("64916e16479953ebebae2e7f")
 }
-db.collc1.find()
+ db.collc1.find()
 {
   _id: ObjectId("64916e16479953ebebae2e7f"),
   name: 'Varshini',
